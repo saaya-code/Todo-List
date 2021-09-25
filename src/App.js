@@ -25,7 +25,7 @@ function App() {
   },[todos])
   const toggleTodo = id =>{
     const newTodos = [...todos] 
-    const todo = newTodos.find(todo => todo.id == id)
+    const todo = newTodos.find(todo => todo.id === id)
     todo.complete = !todo.complete
     setTodos(newTodos)
   }
@@ -35,7 +35,7 @@ function App() {
   }
   function handleAddToDo(e){
     const name = todoNameRef.current.value;
-    if(name == '') return false;
+    if(name === '') return false;
     setTodos(pretoDos =>{
       console.log(pretoDos)
       return [...pretoDos, {id: generateRandomId() , name:name, complete: false}]
